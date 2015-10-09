@@ -1,0 +1,23 @@
+[drupal-auth]
+enabled = False
+port = http,https
+filter = drupal-auth
+logpath = /var/log/drupal/drupal.log
+maxretry = 10
+bantime = 36000
+
+[wordpress-login]
+
+enabled  = true
+filter   = wordpress-login
+logpath  = /var/log/apache2/access_log
+#action   = iptables[name=WordPressLogin, port=http, protocol=tcp]
+action = iptables-multiport[name=WordPressLogin, port="80,443"]
+         sendmail[name=apachewp, dest=root]
+port = http, https
+logpath = /var/log/apache2/other_vhosts_access.log
+#nginx
+#logpath = /var/log/nginx/access.log
+maxretry = 15
+findtime = 60
+bantime = 86400
