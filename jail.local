@@ -1,5 +1,5 @@
 [drupal-auth]
-enabled = False
+enabled = false
 port = http,https
 filter = drupal-auth
 logpath = /var/log/drupal/drupal.log
@@ -10,7 +10,7 @@ findtime = 60
 bantime = 86400
 
 [wordpress-login]
-enabled  = true
+enabled  = false
 filter   = wordpress-login
 logpath  = /var/log/apache2/access_log
 #action   = iptables[name=WordPressLogin, port=http, protocol=tcp]
