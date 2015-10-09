@@ -3,11 +3,11 @@ enabled = False
 port = http,https
 filter = drupal-auth
 logpath = /var/log/drupal/drupal.log
-maxretry = 10
-bantime = 36000
+maxretry = 15
+findtime = 60
+bantime = 86400
 
 [wordpress-login]
-
 enabled  = true
 filter   = wordpress-login
 logpath  = /var/log/apache2/access_log
