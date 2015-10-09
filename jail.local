@@ -3,7 +3,8 @@ enabled = False
 port = http,https
 filter = drupal-auth
 logpath = /var/log/drupal/drupal.log
-action  = sendmail[name=drupal-auth, dest=root]
+action = iptables-multiport[name=drupal-auth, port="80,443"]
+         sendmail[name=drupal-auth, dest=root]
 maxretry = 15
 findtime = 60
 bantime = 86400
